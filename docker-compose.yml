@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  nisomnia-ghost:
+    container_name: ghost-docker
+    image: ghost:latest
+    restart: always
+    ports:
+      - 8080:2368
+    env_file:
+      - .env
+    volumes:
+      - /var/www/src:/var/lib/ghost/content:rw
